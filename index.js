@@ -1,5 +1,5 @@
+require("dotenv").config();
 const express = require("express");
-// const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const Mailer = require("./mailer");
 const app = express();
@@ -7,13 +7,13 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
 // Nodemailer configuration
+console.log(process.env.SENDER, process.env.PASSWORD);
 const transporter = new Mailer(
   "smtp.gmail.com",
   587,
-  "androso421@gmail.com",
-  "krph kkis ttyv gekr"
+  process.env.SENDER,
+  process.env.PASSWORD
 );
 
 // Handle form submission to send email
