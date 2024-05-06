@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Message Form</title>
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="p-4">
+    <form onsubmit="event.preventDefault(); sendMail()">
+        <label for="recipient" class="block mb-2">Recipient:</label>
+        <input type="text" id="recipient" name="recipient" class="w-full mb-4 p-2 border rounded-md">
+
+        <label for="subject" class="block mb-2">Subject:</label>
+        <input type="text" id="subject" name="subject" class="w-full mb-4 p-2 border rounded-md">
+
+        <label for="body" class="block mb-2">Body:</label>
+        <textarea id="body" name="body" rows="4" class="w-full mb-4 p-2 border rounded-md"></textarea>
+
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Send</button>
+    </form>
+    <script src="./index.js"></script>
+</body>
+</html>
